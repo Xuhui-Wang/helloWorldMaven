@@ -1,0 +1,13 @@
+sudo: false
+
+language: java
+jdk: oraclejdk8
+before_install:
+  - chmod +x mvnw
+
+jobs:
+    include:
+# consumer
+    - stage: consumer
+      env: TOOL='Maven'
+      script: ./mvnw test
