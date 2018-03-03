@@ -1,11 +1,7 @@
 package com.xuhui.helloMaven;
 
-public class BaseballCoach {
+public class BaseballCoach implements Coach {
 	public String getDailyWorkout() {
-		return "";
+		return "Spend 30 minutes on practice";
 	}
-	    public static void main( String[] args )
-	    {
-	        System.out.println( "Hello World!" );
-	    }
 }
