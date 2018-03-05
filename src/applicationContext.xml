@@ -12,14 +12,12 @@
     
     <!-- define the dependency -->
     
- 	<bean id="myCoach"
- 		class="com.xuhui.helloMaven.TrackCoach">	 		
- 	</bean>
+ 	<!--<bean id="myCoach"-->
+ 		<!--class="com.xuhui.helloMaven.TrackCoach">	 		-->
+ 	<!--</bean>-->
 
-    <!--
     <bean id="myCoach"
         class="com.xuhui.helloMaven.BaseballCoach">         
     </bean>
-    -->
 
 </beans>
