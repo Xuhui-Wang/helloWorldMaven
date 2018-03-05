@@ -5,3 +5,4 @@ target/
 
 # IDE-related settings/ project specific settings vs. workspace preferences
 .settings
+*.iml
