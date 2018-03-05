@@ -4,6 +4,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
 //import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class HelloSpringApp {
@@ -14,7 +15,7 @@ public class HelloSpringApp {
 //
 		// load the spring configuration file
 		FileSystemXmlApplicationContext context =
-				new FileSystemXmlApplicationContext("src/main/java/applicationContext.xml");
+				new FileSystemXmlApplicationContext("src/applicationContext.xml");
 				
 		// retrieve bean from spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
