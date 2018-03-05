@@ -7,17 +7,17 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
-    <!-- Define your beans here -->
-    
-    <!-- define the dependency -->
-    
  	<!--<bean id="myCoach"-->
  		<!--class="com.xuhui.helloMaven.TrackCoach">	 		-->
  	<!--</bean>-->
 
+    <bean id="myFortuneService"
+        class="com.xuhui.helloMaven.HappyFortuneService">
+    </bean>
+    <!-- define the dependency using constructor injection-->
     <bean id="myCoach"
-        class="com.xuhui.helloMaven.BaseballCoach">         
+        class="com.xuhui.helloMaven.BaseballCoach">
+        <constructor-arg ref="myFortuneService"/>
     </bean>
 
 </beans>
