@@ -9,5 +9,6 @@
 <body>
 	<h1>Hello!</h1>
 	<code>echo 'Yes I am Jury'</code>
+	<h2>And we can make the world a better place</h2>
 </body>
 </html>
