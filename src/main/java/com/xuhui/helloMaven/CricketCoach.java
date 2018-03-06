@@ -16,7 +16,6 @@ public class CricketCoach implements Coach {
         this.fortuneService = fortuneService;
     }
 
-    @Override
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -26,7 +25,6 @@ public class CricketCoach implements Coach {
         this.emailAddress = emailAddress;
     }
 
-    @Override
     public String getTeam() {
         return team;
     }
