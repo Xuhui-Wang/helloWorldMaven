@@ -14,7 +14,8 @@
     <!-- define the dependency using constructor injection-->
     <bean id="myCoach"
         class="com.xuhui.helloMaven.TrackCoach"
-        scope="prototype">
+        init-method="doMyStartupStuff"
+        destroy-method="doMyCleanupStuff">
         <constructor-arg ref="myFortuneService"/>
     </bean>
 </beans>
