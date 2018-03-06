@@ -20,4 +20,14 @@ public class BaseballCoach implements Coach {
 		// use my FortuneService to get a 'Fortune'
 		return fortuneService.getFortune();
 	}
+
+	@Override
+	public String getTeam() {
+		return null;
+	}
+
+	@Override
+	public String getEmailAddress() {
+		return null;
+	}
 }

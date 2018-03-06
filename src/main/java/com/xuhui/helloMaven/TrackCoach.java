@@ -17,4 +17,14 @@ public class TrackCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	@Override
+	public String getTeam() {
+		return null;
+	}
+
+	@Override
+	public String getEmailAddress() {
+		return null;
+	}
+
 }

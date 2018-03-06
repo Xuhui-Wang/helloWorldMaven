@@ -11,13 +11,23 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class HelloSpringApp {
 
-	public static void main(String[] args) {
-		Path path = FileSystems.getDefault().getPath("src/main/java/applicationContext.xml").toAbsolutePath();
+	private void checkPath() {
+		Path path = FileSystems.getDefault().getPath("src/main/java/com/xuhui/helloMaven/applicationContext.xml").toAbsolutePath();
 		System.out.println("current path: " + path.toString());
+		ClassLoader loader = HelloSpringApp.class.getClassLoader();
+		System.out.println(loader.getResource("applicationContext.xml"));
+//		String filename = "test01.xml";
+//		URL url = getClass().getResource(filename);
+//		System.out.println(url.getPath());
+
+	}
+	public static void main(String[] args) {
+		HelloSpringApp app = new HelloSpringApp();
+		app.checkPath();
 		// load the spring configuration file
 		FileSystemXmlApplicationContext context =
 				new FileSystemXmlApplicationContext("src/applicationContext.xml");
-////
+
 //		ClassPathXmlApplicationContext context =
 //				new ClassPathXmlApplicationContext("applicationContext.xml");
 

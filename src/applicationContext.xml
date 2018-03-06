@@ -19,5 +19,13 @@
         class="com.xuhui.helloMaven.BaseballCoach">
         <constructor-arg ref="myFortuneService"/>
     </bean>
+    <!-- define the dependency using setter injection-->
+    <bean id="myCricketCoach"
+          class="com.xuhui.helloMaven.CricketCoach">
+        <property name="fortuneService" ref="myFortuneService"/>
+        <property name="emailAddress" value="ronald@whitehouse.gov"/>
+        <property name="team" value="Lakers"/>
+    </bean>
+
 
 </beans>
