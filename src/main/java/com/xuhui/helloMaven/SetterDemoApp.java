@@ -1,5 +1,6 @@
 package com.xuhui.helloMaven;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import java.net.URL;
@@ -11,11 +12,8 @@ import java.nio.file.Path;
 public class SetterDemoApp {
 	public static void main(String[] args) {
 		// load the spring configuration file
-		FileSystemXmlApplicationContext context =
-				new FileSystemXmlApplicationContext("src/applicationContext.xml");
-
-//		ClassPathXmlApplicationContext context =
-//				new ClassPathXmlApplicationContext("applicationContext.xml");
+		ClassPathXmlApplicationContext context =
+				new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// retrieve bean from spring container
 		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);

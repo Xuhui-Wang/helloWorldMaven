@@ -1,35 +1,29 @@
 package com.xuhui.helloMaven;
 
-import java.net.URL;
-import java.net.URLClassLoader;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
 //import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class HelloSpringApp {
 
 	private void checkPath() {
-		Path path = FileSystems.getDefault().getPath("src/main/java/com/xuhui/helloMaven/applicationContext.xml").toAbsolutePath();
+		Path path = FileSystems.getDefault().getPath("src/main/applicationContext.xml").toAbsolutePath();
 		System.out.println("current path: " + path.toString());
-		ClassLoader loader = HelloSpringApp.class.getClassLoader();
-		System.out.println(loader.getResource("applicationContext.xml"));
-//		String filename = "test01.xml";
-//		URL url = getClass().getResource(filename);
-//		System.out.println(url.getPath());
-
 	}
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws IOException {
 		HelloSpringApp app = new HelloSpringApp();
 		app.checkPath();
-		// load the spring configuration file
-		FileSystemXmlApplicationContext context =
-				new FileSystemXmlApplicationContext("src/applicationContext.xml");
+        File myFile = new File("classpath:applicationContext.xml");
+        System.out.println("Attempting to read from file in: "+myFile.getCanonicalPath());
 
-//		ClassPathXmlApplicationContext context =
-//				new ClassPathXmlApplicationContext("applicationContext.xml");
+        // load the spring configuration file
+		ClassPathXmlApplicationContext context =
+				new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// retrieve bean from spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
