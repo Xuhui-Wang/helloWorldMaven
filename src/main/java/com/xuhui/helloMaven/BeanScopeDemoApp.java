@@ -1,33 +1,31 @@
 package com.xuhui.helloMaven;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
 //import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloSpringApp {
-
-	private void checkPath() {
-		Path path = FileSystems.getDefault().getPath("src/main/applicationContext.xml").toAbsolutePath();
-		System.out.println("current path: " + path.toString());
-	}
-
+public class BeanScopeDemoApp {
 	public static void main(String[] args) throws IOException {
-		HelloSpringApp app = new HelloSpringApp();
-		app.checkPath();
-        File myFile = new File("classpath:applicationContext.xml");
-        System.out.println("Attempting to read from file in: "+myFile.getCanonicalPath());
-
-        // load the spring configuration file
+		// load the spring configuration file
 		ClassPathXmlApplicationContext context =
 				new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
 
 		// retrieve bean from spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
-		
+		Coach alphaCoach = context.getBean("myCoach", Coach.class);
+
+		// check if they are the same
+		boolean result = (theCoach == alphaCoach);
+
+		System.out.println("\nPoint to the same object? " + result);
+		System.out.println("\nMemory location for 'theCoach'" + theCoach);
+		System.out.println("\nMemory location for 'alphaCoach'" + alphaCoach);
+
 		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
 
