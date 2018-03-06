@@ -1,0 +1,5 @@
+package com.xuhui.demoAnnotations;
+
+public interface Coach {
+	public String getDailyWorkout();
+}
