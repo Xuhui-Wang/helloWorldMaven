@@ -2,10 +2,8 @@ package com.xuhui.demoAnnotations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.IOException;
-
 public class AnnotationDemoApp {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // load the spring configuration file
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("beanAnnotation-applicationContext.xml");
