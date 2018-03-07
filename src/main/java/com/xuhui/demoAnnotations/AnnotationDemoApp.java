@@ -1,6 +1,5 @@
 package com.xuhui.demoAnnotations;
 
-import com.xuhui.helloMaven.HelloSpringApp;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
@@ -16,6 +15,7 @@ public class AnnotationDemoApp {
 
         // call methods on the bean
         System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getDailyFortune());
 
         // close the context
         context.close();
