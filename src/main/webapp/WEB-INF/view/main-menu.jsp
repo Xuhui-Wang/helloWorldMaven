@@ -12,5 +12,6 @@
 </head>
 <body>
     <h1>First Spring MVC page</h1>
+    <a href="/showForm">Hello world form</a>
 </body>
 </html>
