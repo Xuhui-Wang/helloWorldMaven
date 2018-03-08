@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>First Spring MVC page</h1>
-    <a href="/showForm">Hello world form</a>
+    <a href="/showForm">helloworld form</a>
+    <a href="/student/showForm">Student form</a>
 </body>
 </html>
