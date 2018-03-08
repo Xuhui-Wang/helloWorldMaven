@@ -1,12 +1,7 @@
 package com.xuhui.springMVCdemo;
 
-import org.springframework.beans.factory.annotation.Value;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class Student {
-    private String firstName, lastName, country;
+    private String firstName, lastName, country, favoriteLanguage;
 
     public String getFirstName() {
         return firstName;
@@ -30,5 +25,13 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getFavoriteLanguage() {
+        return favoriteLanguage;
+    }
+
+    public void setFavoriteLanguage(String favoriteLanguage) {
+        this.favoriteLanguage = favoriteLanguage;
     }
 }
