@@ -3,7 +3,7 @@ package com.xuhui.springMVCdemo;
 import java.util.LinkedHashMap;
 
 public class Student {
-    private String firstName, lastName, country, favoriteLanguage;
+    private String firstName, lastName, country, favoriteLanguage, operatingSystems[];
     private LinkedHashMap<String, String> favoriteLanguageOptions;
 
     public Student() {
@@ -50,5 +50,13 @@ public class Student {
 
     public LinkedHashMap<String, String> getFavoriteLanguageOptions() {
         return favoriteLanguageOptions;
+    }
+
+    public String[] getOperatingSystems() {
+        return operatingSystems;
+    }
+
+    public void setOperatingSystems(String[] operatingSystems) {
+        this.operatingSystems = operatingSystems;
     }
 }
