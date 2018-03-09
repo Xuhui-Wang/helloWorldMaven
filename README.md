@@ -12,3 +12,11 @@ IoC is also known as dependency injection (DI). It is a process whereby objects 
 Annotation-based configurations v.s. XML:
 
 Due to the way they are defined, annotations provide a lot of context in their declaration, leading to shorter and more concise configuration. However, XML excels at wiring up components without touching their source code or recompiling them. Some developers prefer having the wiring close to the source while others argue that annotated classes are no longer POJOs and, furthermore, that the configuration becomes decentralized and harder to control.
+
+---
+
+## InitBinder
+
+Annotation that identifies methods which initialize the WebDataBinder which will be used for populating command and form object arguments of annotated handler methods.
+
+Such init-binder methods support all arguments that RequestMapping supports, except for command/form objects and corresponding validation result objects. Init-binder methods must not have a return value; they are usually declared as void.
