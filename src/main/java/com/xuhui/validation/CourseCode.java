@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CourseCode {
     // define default course code
-    public String value() default "SCS";
+    public String[] value() default {"SCS"};
 
     // define default error message
     public String message() default "Must start with SCS";

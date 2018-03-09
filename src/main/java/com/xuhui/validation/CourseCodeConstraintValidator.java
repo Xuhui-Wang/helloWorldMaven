@@ -6,20 +6,21 @@ import javax.validation.ConstraintValidatorContext;
 public class CourseCodeConstraintValidator
     implements ConstraintValidator<CourseCode, String> {
 
-    private String coursePrefix;
+    private String[] prefixes;
 
     @Override
     public void initialize(CourseCode courseCode) {
-        coursePrefix = courseCode.value();
-        System.out.println("Initiazlied: prefix: |" + coursePrefix + "|");
+        prefixes = courseCode.value();
     }
 
     @Override
     public boolean isValid(String code, ConstraintValidatorContext constraintValidatorContext) {
-        System.out.println("code: |" + code + "|");
-        System.out.println("prefix: |" + coursePrefix + "|");
         if (code != null) {
-            return code.startsWith(coursePrefix);
+            for (String prefix : prefixes) {
+                if (code.startsWith(prefix))
+                    return true;
+            }
+            return false;
         } else {
             return true;
         }
