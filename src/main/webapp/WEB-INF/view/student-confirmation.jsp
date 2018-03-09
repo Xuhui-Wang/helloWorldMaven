@@ -10,7 +10,7 @@
     <br><br>
     Favorite Language: ${student.favoriteLanguage}
     <br><br>
-    Operating Systems:
+    Operating Systems:<br>
     <ul>
         <c:forEach var="temp" items="${student.operatingSystems}">
             <li>${temp}</li>
