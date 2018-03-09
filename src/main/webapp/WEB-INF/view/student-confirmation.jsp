@@ -15,7 +15,6 @@
         <c:forEach var="temp" items="${student.operatingSystems}">
             <li>${temp}</li>
         </c:forEach>
-        <li></li>
     </ul>
 </body>
 </html>
