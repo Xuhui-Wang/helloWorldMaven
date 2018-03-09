@@ -1,5 +1,7 @@
 package com.xuhui.springMVCdemo;
 
+import com.xuhui.validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -16,6 +18,9 @@ public class Customer {
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
+
+    @CourseCode(value="CMU", message="must start with CMU")
+    private String courseCode;
     public String getFirstName() {
         return firstName;
     }
@@ -46,5 +51,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
