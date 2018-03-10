@@ -20,6 +20,7 @@
 	<junit.jupiter.version>5.0.3</junit.jupiter.version>
 	<junit.vintage.version>${junit.version}.3</junit.vintage.version>
 	<junit.platform.version>1.0.3</junit.platform.version>
+	<log4j.version>1.2.17</log4j.version>
   </properties>
 <build>
 	<plugins>
@@ -195,6 +196,12 @@
 		  <groupId>com.sun.activation</groupId>
 		  <artifactId>javax.activation</artifactId>
 		  <version>1.2.0</version>
+	  </dependency>
+	  <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+	  <dependency>
+		  <groupId>log4j</groupId>
+		  <artifactId>log4j</artifactId>
+		  <version>${log4j.version}</version>
 	  </dependency>
   </dependencies>
 </project>
