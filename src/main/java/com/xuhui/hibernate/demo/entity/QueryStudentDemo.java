@@ -22,14 +22,31 @@ public class QueryStudentDemo {
             // use the session object to save Java object
 
             // query the students
-            System.out.println("Query the students");
+            System.out.println("Query the students\n\n");
             List<Student> studentList = session.createQuery("from Student").list();
 
             // display the students
             displayStudents(studentList);
 
-            // query students: lastname== 'Trum'
+            // query students: lastname== 'Trump'
+            System.out.println("Query the students with last name 'Trump'\n\n");
             studentList = session.createQuery("from Student s where s.lastName='Trump'").list();
+
+            // display students
+            displayStudents(studentList);
+
+            // query students: first name== 'Hillary' OR ...
+            System.out.println("Query the students with first name 'Hillary'\n\n");
+            studentList = session.createQuery("from Student s where s.firstName='Hillary'" +
+            "OR s.lastName='Trump'").list();
+
+            // display students with email '...@ihs.gov'
+            displayStudents(studentList);
+
+            // query students: first name== 'Hillary' OR ...
+            System.out.println("Query the students with email\n\n");
+            studentList = session.createQuery("from Student s where s.email"
+                    + " like '%ihs.gov'").list();
 
             // display students
             displayStudents(studentList);
