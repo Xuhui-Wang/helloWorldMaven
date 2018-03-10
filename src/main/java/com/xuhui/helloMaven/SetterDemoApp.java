@@ -1,11 +1,6 @@
 package com.xuhui.helloMaven;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-import java.net.URL;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
 
 //import org.springframework.context.ApplicationContext;
 
