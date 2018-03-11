@@ -4,6 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Date;
+
 public class CreateStudentDemo {
     public static void main(String[] args) {
         // create session factory
@@ -20,7 +22,10 @@ public class CreateStudentDemo {
 
             // create the student object
             System.out.println("Creating a new student object");
-            Student student = new Student("Paul", "Ryan", "ran@ihs.gov");
+            String theDateOfBirthStr = "31/12/1998";
+            Date theDateOfBirth = DateUtils.parseDate(theDateOfBirthStr);
+
+            Student student = new Student("Paul", "Ryan", "ran@ihs.gov", theDateOfBirth);
 
             // begin the transaction
             session.beginTransaction();
@@ -32,6 +37,8 @@ public class CreateStudentDemo {
             session.getTransaction().commit();
 
             System.out.println("Done!");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         finally {
             factory.close();
