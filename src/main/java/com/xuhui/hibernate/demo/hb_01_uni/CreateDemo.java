@@ -1,4 +1,4 @@
-package com.xuhui.hibernate.demo.Instructor;
+package com.xuhui.hibernate.demo.hb_01_uni;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

@@ -1,10 +1,10 @@
-package com.xuhui.hibernate.demo.Instructor;
+package com.xuhui.hibernate.demo.hb_02_bi;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class DeleteDemo {
+public class GetInstructorDetailDemo {
     public static void main(String[] args) {
         // create session factory
         SessionFactory factory = new Configuration()
@@ -20,18 +20,16 @@ public class DeleteDemo {
             // start transaction
             session.beginTransaction();
 
-            // get instructor primary key / id
-            int theId = 1;
-            Instructor instructor = session.get(Instructor.class, theId);
-            System.out.println("Found the instructor: " + instructor);
+            // get the instructor detail object
+            int id = 2;
+            InstructorDetail instructorDetail =
+                    session.get(InstructorDetail.class, id);
 
-            // delete the instructor
-            if (instructor != null) {
-                System.out.println("Deleting: " + instructor);
-                session.delete(instructor);
-            }
+            // print the instructor detail
+            System.out.println("Instructor detail: " + instructorDetail);
 
-            System.out.println("Saved the instructor: " + instructor);
+            // print the associated instructor
+            System.out.println("Instructor: " + instructorDetail.getInstructor());
 
             // commit the transaction
             session.getTransaction().commit();

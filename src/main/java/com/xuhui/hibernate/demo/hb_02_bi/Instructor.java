@@ -1,4 +1,4 @@
-package com.xuhui.hibernate.demo.Instructor;
+package com.xuhui.hibernate.demo.hb_02_bi;
 
 import javax.persistence.*;
 
