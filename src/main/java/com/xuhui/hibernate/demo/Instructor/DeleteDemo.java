@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateDemo {
+public class DeleteDemo {
     public static void main(String[] args) {
         // create session factory
         SessionFactory factory = new Configuration()
@@ -19,28 +19,18 @@ public class CreateDemo {
         try {
             // start transaction
             session.beginTransaction();
-/*
-            // create an object
-            Instructor instructor = new Instructor("Donald", "Trump", "trump@whitehouse.gov");
 
-            InstructorDetail instructorDetail = new InstructorDetail("https://youtu.be/aaOB-ErYq6Y",
-                    "code in Java");
+            // get instructor primary key / id
+            int theId = 1;
+            Instructor instructor = session.get(Instructor.class, theId);
+            System.out.println("Found the instructor: " + instructor);
 
-            // associate the objects
-            instructor.setInstructorDetail(instructorDetail);
+            // delete the instructor
+            if (instructor != null) {
+                System.out.println("Deleting: " + instructor);
+                session.delete(instructor);
+            }
 
-*/
-            // create an object
-            Instructor instructor = new Instructor("Bill", "Clinton", "clinton@whitehouse.gov");
-
-            InstructorDetail instructorDetail = new InstructorDetail("https://youtu.be/aaOB-ErYq6Y",
-                    "code in Python");
-
-            // associate the objects
-            instructor.setInstructorDetail(instructorDetail);
-
-            // save the instructor (also save detail object)
-            session.save(instructor);
             System.out.println("Saved the instructor: " + instructor);
 
             // commit the transaction
