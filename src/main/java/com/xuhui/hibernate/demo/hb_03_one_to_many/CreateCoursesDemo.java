@@ -21,6 +21,21 @@ public class CreateCoursesDemo {
             // start transaction
             session.beginTransaction();
 
+            // get the instructor
+            int id = 1;
+            Instructor instructor = session.get(Instructor.class, id);
+            System.out.println("Get the instructor: " + instructor);
+
+            // create some courses
+            Course course1 = new Course("Football");
+            Course course2 = new Course("Ping-pong master class");
+            instructor.add(course1);
+            instructor.add(course2);
+
+            // save the courses
+            session.save(course1);
+            session.save(course2);
+
             // commit the transaction
             session.getTransaction().commit();
 

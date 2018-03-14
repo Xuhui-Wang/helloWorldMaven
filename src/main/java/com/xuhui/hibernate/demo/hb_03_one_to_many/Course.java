@@ -11,7 +11,7 @@ public class Course {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "column")
+    @Column(name = "title")
     private String title;
 
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE,
