@@ -1,9 +1,11 @@
 package com.xuhui.hibernate.demo.hb_05_many_to_many;
 
 import javax.persistence.*;
-import java.util.LinkedHashMap;
 import java.util.List;
 
+
+@Entity
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Student {
     private String email;
 
     @ManyToMany(fetch = FetchType.LAZY,
-    cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+        cascade = {CascadeType.PERSIST, CascadeType.MERGE,
         CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(
             name = "course_student",
