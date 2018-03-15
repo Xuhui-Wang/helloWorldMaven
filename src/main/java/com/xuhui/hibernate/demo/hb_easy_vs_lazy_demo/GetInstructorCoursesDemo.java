@@ -30,6 +30,8 @@ public class GetInstructorCoursesDemo {
             // commit the transaction
             session.getTransaction().commit();
 
+//            System.out.println("Courses: " + instructor.getCourses());
+
             System.out.println("Done!");
         } catch (Exception e) {
             e.printStackTrace();
