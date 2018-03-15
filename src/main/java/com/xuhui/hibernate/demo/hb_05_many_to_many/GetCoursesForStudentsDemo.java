@@ -24,7 +24,7 @@ public class GetCoursesForStudentsDemo {
             session.beginTransaction();
 
             // get the student Mary from db
-            int id = 2;
+            int id = 1;
             Student student = session.get(Student.class, id);
 
             // print out student and its courses
